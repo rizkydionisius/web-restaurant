@@ -56,38 +56,6 @@ nav {
   min-width: 1000px; /* Set the minimum width for the hero image on larger screens */
 }
 
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-}
-
-.hero-text h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-
-.hero-text p {
-  font-size: 1.2em;
-  margin: 0;
-}
-
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero img {
-  width: 100%;
-  height: auto;
-  min-width: 1000px; 
-}
-
-
-
 /* Media query untuk tampilan mobile pada navbar */
 @media screen and (max-width: 600px) {
   /* Styles untuk tampilan mobile */
