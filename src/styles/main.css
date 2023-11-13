@@ -12,6 +12,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 44px;
 }
 
 nav a,
@@ -184,3 +185,17 @@ nav,
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
   }
+
+/* Tampilan desktop */
+@media screen and (min-width: 601px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* Tampilan mobile */
+@media screen and (max-width: 600px) {
+  .hamburger {
+    display: block;
+  }
+}

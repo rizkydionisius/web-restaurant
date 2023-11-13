@@ -63,6 +63,12 @@ function renderRestaurantList(restaurants) {
     });
 }
 
+function toggleDrawer() {
+    const drawer = document.querySelector(".drawer");
+    drawer.classList.remove("active");
+    document.getElementById("main-nav").focus();
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const nav = document.getElementById("main-nav");
     const hamburger = document.querySelector(".hamburger");
