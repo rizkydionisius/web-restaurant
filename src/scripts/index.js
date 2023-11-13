@@ -9,15 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.addEventListener("click", function () {
         menu.classList.toggle("active");
     });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.querySelector(".hamburger");
-    const menu = document.querySelector(".right-section");
-
-    hamburger.addEventListener("click", function () {
-        menu.classList.toggle("active");
-    });
 
     // Handle resizing of the window
     window.addEventListener("resize", function () {
