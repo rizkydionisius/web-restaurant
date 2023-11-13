@@ -8,10 +8,23 @@ body {
 nav {
   background-color: #0C356A;
   color: white;
-  padding: 15px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+nav a,
+.hamburger {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav.active {
+  max-height: 500px; /* Sesuaikan dengan tinggi yang diinginkan */
 }
 
 .left-section {
@@ -56,6 +69,19 @@ nav {
   min-width: 1000px; 
 }
 
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+  .right-section {
+    margin-top: 10px; 
+  }
+  .hamburger {
+    margin-top: 10px; 
+  }
+}
+
 /* Media query untuk tampilan mobile pada navbar */
 @media screen and (max-width: 600px) {
   /* Styles untuk tampilan mobile */
@@ -76,6 +102,12 @@ nav {
   .hamburger {
       display: block;
   }
+
+  nav.active,
+  #my-main-content.active {
+      max-height: 500px; /* Sesuaikan dengan tinggi yang diinginkan */
+  }
+
 }
 
 
@@ -127,3 +159,28 @@ footer {
   width: 100%;
   max-width: 100%;
 }
+
+/*"Skip to Content" */
+.skip-link {
+  position: absolute;
+  top: -999em;
+  left: -999em;
+}
+
+/*"Skip to Content" pada fokus */
+.skip-link:focus {
+  position: static;
+  display: block;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  z-index: 9999;
+}
+
+nav,
+  #my-main-content {
+    max-height: 10;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }

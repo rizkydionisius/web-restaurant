@@ -26,6 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Adjust hero image size on page load
     adjustHeroImageSize();
+
+    // Ambil data restoran dari file DATA.json
+    fetch("data/DATA.json")
+        .then(response => response.json())
+        .then(data => {
+            // Panggil fungsi untuk menampilkan daftar restoran
+            renderRestaurantList(data.restaurants);
+        })
+        .catch(error => console.error("Error fetching data:", error));
 });
 
 function adjustHeroImageSize() {
@@ -39,19 +48,8 @@ function adjustHeroImageSize() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Ambil data restoran dari file DATA.json
-    fetch("data/DATA.json")
-        .then(response => response.json())
-        .then(data => {
-            // Panggil fungsi untuk menampilkan daftar restoran
-            renderRestaurantList(data.restaurants);
-        })
-        .catch(error => console.error("Error fetching data:", error));
-});
-
 function renderRestaurantList(restaurants) {
-    const restaurantListContainer = document.getElementById("restaurantList");
+    const restaurantListContainer = document.getElementById("my-main-content");
 
     // Loop melalui setiap restoran dan buat elemen card
     restaurants.forEach(restaurant => {
@@ -74,4 +72,17 @@ function renderRestaurantList(restaurants) {
     });
 }
 
-
+document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.getElementById("main-nav");
+    const hamburger = document.querySelector(".hamburger");
+    const mainContent = document.getElementById("my-main-content");
+  
+    if (nav && hamburger && mainContent) {
+        hamburger.addEventListener("click", function () {
+          nav.classList.toggle("active");
+          mainContent.classList.toggle("active");
+        });
+      } else {
+        console.error("Elemen tidak ditemukan");
+      }
+ });
